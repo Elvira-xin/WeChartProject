@@ -1,12 +1,25 @@
 <searchInput></searchInput>
 
 <!--轮播图开始-->
+<view class="index_swiper">
 <swiper autoplay circular indicator-dots>
     <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
         <image src="{{item.image_src}}" mode="widthFix"/>
-          
     </swiper-item>
-      
 </swiper>
-  
+</view>
+
+
 <!--轮播图结束-->
+
+
+<!--导肮菜单开始-->
+
+<view class="index_nav">
+    <navigator wx:for="{{cataList}}" wx:key="name">
+        <image src="{{item.image_src}}" mode="widthFix"/>
+    </navigator>
+</view>
+
+<!--导航菜单结束-->
+
