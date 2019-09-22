@@ -1,5 +1,5 @@
 .searchInput{
-    background-color: #fbb928;
+    background-color: var(--themeColor);
     height: 50rpx;
     padding: 15px;
 }
