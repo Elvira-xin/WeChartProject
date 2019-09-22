@@ -1,4 +1,6 @@
 <view class="searchInput">
-    <navigator url="pages/search/index">
+    <navigator url="../../pages/search/index">
+    <icon class="" type="search" size="12" color="">
+    </icon> 搜索
     </navigator>
 </view>
