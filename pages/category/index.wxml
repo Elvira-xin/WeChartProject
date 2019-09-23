@@ -38,7 +38,7 @@
               wx:for-item="item2"
               >
               <image src="{{item2.cat_icon}}" mode="widthFix"/>
-                <view class="item_name">{{item2.cat_name}}</view>
+              <view class="item_name">{{item2.cat_name}}</view>
               </navigator>
           </view>
       </view>
