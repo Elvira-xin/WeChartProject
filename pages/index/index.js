@@ -1,3 +1,5 @@
+//引入封装好的promis
+import {request} from '../../request/index'
 Page({
     data: {
         //轮播图数组
@@ -14,38 +16,41 @@ Page({
     },
     //获取轮播图数据
     getSwiperDate() {
-        wx.request({
-            url: 'https://api.zbztb.cn/api/public/v1/home/swiperdata',
-            success: (res) => {
-                // console.log(res);
-                this.setData({
-                    swiperList: res.data.message
-                })
-            },
-        });
+        request({
+            url:'/home/swiperdata',
+        }).then(res=>{
+            this.setData({
+                swiperList:res.data.message
+            })
+        })
     },
     //获取导航菜单数据
     getCateData(){
-        wx.request({
-            url:'https://api.zbztb.cn/api/public/v1/home/catitems',
-            success:(res)=>{
-                // console.log(res)
-                this.setData({
-                    cataList:res.data.message
-                })
-            }
+        request({
+            url:'/home/catitems'
+        }).then(res=>{
+            this.setData({
+                cataList:res.data.message
+            })
         })
+        // wx.request({
+        //     url:'/catitems',
+        //     success:(res)=>{
+        //         // console.log(res)
+        //         this.setData({
+        //             cataList:res.data.message
+        //         })
+        //     }
+        // })
     },
     //获取楼层数据
     getFloorData(){
-        wx.request({
-            url:'https://api.zbztb.cn/api/public/v1/home/floordata',
-            success:(res)=>{
-                console.log(res);
-                this.setData({
-                    floorList:res.data.message
-                })
-            }
+        request({
+            url:'/home/floordata'
+        }).then(res=>{
+            this.setData({
+                floorList:res.data.message
+            })
         })
     }
 })
