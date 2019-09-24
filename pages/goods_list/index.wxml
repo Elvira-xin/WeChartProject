@@ -1,2 +1,20 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<!-- 搜索组件开始 -->
+<searchInput></searchInput>
+<!-- 搜索组件结束 -->
+
+<!-- 商品列表tab栏开始 -->
+<view class="goods_list">
+    <view class="goods_tab {{index===currentIndex?'active':''}}" 
+    wx:for="{{tabList}}" 
+    wx:key="key"
+    bindtap="handleTap"
+    currentIndex="{{currentIndex}}"
+    data-index="{{index}}"
+    >
+        {{item.text}}
+    </view>
+</view>
+<!-- 商品列表tab栏结束 -->
+
+<!-- 商品列表内容开始 -->
+<!-- 商品列表内容结束 -->
