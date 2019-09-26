@@ -17,4 +17,12 @@
 <!-- 商品列表tab栏结束 -->
 
 <!-- 商品列表内容开始 -->
+<view class="goods_content">
+    <view class="content_item"
+    wx:for="{{goodsList}}"
+    >
+        <view class="item_img"></view>
+        <view class="item_info"></view>
+    </view>
+</view>
 <!-- 商品列表内容结束 -->
