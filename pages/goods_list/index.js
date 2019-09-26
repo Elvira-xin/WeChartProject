@@ -20,18 +20,20 @@ Page({
   queryParam:{
     query:'',
     cid:'',
-    pagenum:3,
+    pagenum:1,
     pagesize:10
   },
-  onLoad(){
-    this.getGoodsData()
+  totalPage:1,
+  onLoad(options){
+    // console.log(options);
+    const {cid}=options
+    this.queryParam.cid=cid
+    this.getGoodsData();
   },
   // 点击切换商品列表tab栏
-  handleTap(e){
-    // console.log(e);
-    const {index}=e.target.dataset
+  tabChange(e){
     this.setData({
-      currentIndex:index
+      currentIndex:e.detail.index
     })
   },
   //获取商品列表数据
@@ -41,11 +43,15 @@ Page({
       data:this.queryParam
     }).then(res=>{
       console.log(res);
-      const {pagenum}=res.data.message;
-      const {total}=res.data.message;
-      setData({
-        pagenum,
-        pagesize:total/pagenum
+      //获取旧数组
+      const oldGoodsList=this.data.goodsList
+      //获取后台新的数组
+      const newGoodsList=res.data.message.goods
+      // const {pagenum}=res.data.message;
+      this.totalPage=Math.ceil(res.data.message.total/this.queryParam.pagesize)
+      // console.log(this.totalPage);
+      this.setData({
+        goodsList:[...oldGoodsList,...newGoodsList]
       })
     })
   }
