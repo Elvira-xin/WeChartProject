@@ -1,0 +1,15 @@
+.goodsTab{
+    display: flex;
+    height: 90rpx;
+}
+.tabs_title{
+    flex: 1;
+    flex-direction: column;
+    text-align: center;
+    
+    line-height: 90rpx;
+}
+.active{
+    color: var(--themeColor);
+    border-bottom: 1rpx solid red;
+}

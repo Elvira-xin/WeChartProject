@@ -2,27 +2,24 @@
 <searchInput></searchInput>
 <!-- 搜索组件结束 -->
 
-<!-- 商品列表tab栏开始 -->
-<view class="goods_list">
-    <view class="goods_tab {{index===currentIndex?'active':''}}" 
-    wx:for="{{tabList}}" 
-    wx:key="key"
-    bindtap="handleTap"
-    currentIndex="{{currentIndex}}"
-    data-index="{{index}}"
-    >
-        {{item.text}}
-    </view>
-</view>
-<!-- 商品列表tab栏结束 -->
+<!-- 商品列表tab栏组件开始 -->
+<GoodListTab tabList="{{tabList}}" bindtabChange="tabChange" currentIndex="{{currentIndex}}">
+</GoodListTab>
+<!-- 商品列表tab栏组件结束 -->
 
-<!-- 商品列表内容开始 -->
-<view class="goods_content">
-    <view class="content_item"
-    wx:for="{{goodsList}}"
-    >
-        <view class="item_img"></view>
-        <view class="item_info"></view>
+ <!-- 商品列表综合内容开始 -->
+ <view class="goods_content" wx:if="{{currentIndex==0}}">
+        <navigator class="goods_item"
+        wx:for="{{goodsList}}"
+        wx:key="goods_id"
+        >
+            <view class="goods_img">
+                <image src="{{item.goods_small_logo||'https://tva2.sinaimg.cn/large/005R6Otmgy1g7d8e66cmuj309u08hjrn.jpg'}}" mode="widthFix"/>
+            </view>
+            <view class="goods_info">
+                <view class="item_title">{{item.goods_name}}</view>
+                <view class="item_price">{{item.goods_price}}</view>
+            </view>
+        </navigator>
     </view>
-</view>
 <!-- 商品列表内容结束 -->
