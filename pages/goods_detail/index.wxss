@@ -1,1 +1,84 @@
-/* pages/goods_detail/index.wxss */
+.goods_detail .detail_swiper swiper {
+  height: 500rpx;
+}
+.goods_detail .goods_price {
+  color: red;
+  font-weight: 700;
+  font-size: 32rpx;
+  margin-left: 15rpx;
+  margin-bottom: 15rpx;
+}
+.goods_detail .goods_info {
+  display: flex;
+  padding: 10rpx;
+  border-bottom: 1rpx solid #eee;
+  border-top: 1rpx solid #eee;
+}
+.goods_detail .goods_info .goods_title {
+  flex: 4;
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+.goods_detail .goods_info .goods_title {
+  flex: 5;
+  width: 300rpx;
+  border-right: 2rpx solid #000;
+  margin: 0 10rpx;
+  font-size: 28rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.goods_detail .goods_info .goods_collect {
+  flex: 1;
+  text-align: center;
+}
+.goods_detail .goods_info .goods_collect .icon-shoucang {
+  color: orange;
+}
+.goods_detail .detail_info .detail_info_title {
+  font-size: 30rpx;
+  font-weight: 800;
+  color: red;
+  margin: 20rpx;
+}
+.goods_detail .detail_info .detail_info_content {
+  margin-bottom: 100rpx;
+}
+.goods_detail .btm_tool {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  height: 90rpx;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+}
+.goods_detail .btm_tool .tool_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.goods_detail .btm_tool .tool_item button {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.goods_detail .btm_tool .btn_cart,
+.goods_detail .btm_tool .btn_buy {
+  flex: 2;
+  background-color: var(--themeColor);
+  color: #fff;
+  font-weight: 800;
+}
+.goods_detail .btm_tool .btn_buy {
+  background-color: #eb4450;
+}

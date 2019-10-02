@@ -18,10 +18,14 @@ Page({
     currentIndex:0
   },
   queryParam:{
+    // 查询的关键字  可以为空
     query:'',
+    // 分类id  从分类页面 传递过来
     cid:'',
+    // 页码 第几页
     pagenum:1,
-    pagesize:10
+    // 页容量 一页可以放几条数据 
+    pagesize:''
   },
   totalPage:1,
   onLoad(options){
@@ -29,12 +33,6 @@ Page({
     const {cid}=options
     this.queryParam.cid=cid
     this.getGoodsData();
-  },
-  // 点击切换商品列表tab栏
-  tabChange(e){
-    this.setData({
-      currentIndex:e.detail.index
-    })
   },
   //获取商品列表数据
   getGoodsData(){
@@ -47,12 +45,25 @@ Page({
       const oldGoodsList=this.data.goodsList
       //获取后台新的数组
       const newGoodsList=res.data.message.goods
-      // const {pagenum}=res.data.message;
-      this.totalPage=Math.ceil(res.data.message.total/this.queryParam.pagesize)
+      // 总条数
+      const total=res.data.message.total;
+      this.totalPage=Math.ceil(total/this.queryParam.pagesize)
       // console.log(this.totalPage);
       this.setData({
         goodsList:[...oldGoodsList,...newGoodsList]
       })
     })
+    //停止下拉刷新
+    wx.stopPullDownRefresh()
+  },
+  onPullDownRefresh(){
+    console.log(123);
+    
+  },
+  //页面上拉触底事件的处理函数
+  onReachBottom(){
+    // console.log(456);
+    // if()
+    
   }
 })

@@ -2,5 +2,8 @@
   "usingComponents": {
     "searchInput":"../../components/Search/index",
     "GoodListTab":"../../components/GoodsListTab"
-  }
+  },
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle":"dark",
+  "navigationBarTitleText":"商品列表"
 }

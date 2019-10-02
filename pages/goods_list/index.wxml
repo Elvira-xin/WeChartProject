@@ -12,13 +12,14 @@
         <navigator class="goods_item"
         wx:for="{{goodsList}}"
         wx:key="goods_id"
+        url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
         >
             <view class="goods_img">
-                <image src="{{item.goods_small_logo||'https://tva2.sinaimg.cn/large/005R6Otmgy1g7d8e66cmuj309u08hjrn.jpg'}}" mode="widthFix"/>
+                <image src="{{item.goods_big_logo||'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569526759505&di=cf633261ca47dfd20bd3ff7196a5e795&imgtype=0&src=http%3A%2F%2Fwww.juimg.com%2Ftuku%2Fyulantu%2F140402%2F330548-1404021H63054.jpg'}}" mode="widthFix"/>
             </view>
             <view class="goods_info">
                 <view class="item_title">{{item.goods_name}}</view>
-                <view class="item_price">{{item.goods_price}}</view>
+                <view class="item_price">￥{{item.goods_price}}</view>
             </view>
         </navigator>
     </view>
