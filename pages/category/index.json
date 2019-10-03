@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "mp-tabbar":"../../components/Search/index"
-  }
+  },
+  "navigationBarTitleText":"分类"
 }

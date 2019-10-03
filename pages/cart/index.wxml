@@ -1,2 +1,21 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="adress">
+    <button plain type="primary" open-type="openSetting">获取收货地址</button>
+</view>
+<view class="cart">
+    <view class="cart_title">购物车</view>
+    <image class="" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570125418439&di=6863d5db05799531b5fc7bc93db5db3e&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F031050659016111a801214550e19731.jpg%40260w_195h_1c_1e_1o_100sh.jpg" mode="widthFix" />
+</view>
+<view class="btm_cart">
+    <view class="check_all">
+        <checkbox >
+            全选
+        </checkbox>
+    </view>
+    <view class="total_price_wrap">
+        <view class="total_price1">合计 <text>￥ {{0}}</text></view>
+        <view class="total_price2">
+            包含运费
+        </view>
+    </view>
+    <view class="calculator">结算(0)</view>
+</view>

@@ -1,5 +1,5 @@
 import { request } from "../../request/index"
-
+import regeneratorRuntime from '../../lib/runtime/runtime'
 // pages/category/index.js
 Page({
 
@@ -41,25 +41,39 @@ Page({
       this.getCates()
     }
   },
-  getCates(){
-    request({
-      url:'/categories'
-    }).then(res=>{
-      console.log(res)
-      this.Cates=res.data.message;
-      wx.setStorageSync('cates', {
-        data:this.Cates,
-        time:Date.now()
-      });
-      const menuList=this.Cates.map(v=> v.cat_name)
-      const goodsData=this.Cates[0].children
-      this.setData({
-        menuList,
-        goodsData
-      })
+  async getCates(){
+    const res=await request({ url:'/categories'})
+    this.Cates=res.data.message;
+    wx.setStorageSync('cates', {
+      data:this.Cates,
+      time:Date.now()
+    });
+    const menuList=this.Cates.map(v=> v.cat_name)
+    const goodsData=this.Cates[0].children
+    this.setData({
+      menuList,
+      goodsData,
     })
-   
   },
+  // getCates(){
+  //   request({
+  //     url:'/categories'
+  //   }).then(res=>{
+  //     console.log(res)
+  //     this.Cates=res.data.message;
+  //     wx.setStorageSync('cates', {
+  //       data:this.Cates,
+  //       time:Date.now()
+  //     });
+  //     const menuList=this.Cates.map(v=> v.cat_name)
+  //     const goodsData=this.Cates[0].children
+  //     this.setData({
+  //       menuList,
+  //       goodsData
+  //     })
+  //   })
+   
+  // },
   
   //左侧菜单点击事件
   handleMenuTap(e){

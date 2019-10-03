@@ -7,20 +7,20 @@
 </GoodListTab>
 <!-- 商品列表tab栏组件结束 -->
 
- <!-- 商品列表综合内容开始 -->
- <view class="goods_content" wx:if="{{currentIndex==0}}">
-        <navigator class="goods_item"
-        wx:for="{{goodsList}}"
-        wx:key="goods_id"
-        url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
-        >
-            <view class="goods_img">
-                <image src="{{item.goods_big_logo||'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569526759505&di=cf633261ca47dfd20bd3ff7196a5e795&imgtype=0&src=http%3A%2F%2Fwww.juimg.com%2Ftuku%2Fyulantu%2F140402%2F330548-1404021H63054.jpg'}}" mode="widthFix"/>
-            </view>
-            <view class="goods_info">
-                <view class="item_title">{{item.goods_name}}</view>
-                <view class="item_price">￥{{item.goods_price}}</view>
-            </view>
-        </navigator>
-    </view>
+<!-- 商品列表综合内容开始 -->
+<view class="goods_content" wx:if="{{currentIndex==0}}">
+    <navigator class="goods_item" wx:for="{{goodsList}}" wx:key="goods_id"
+        url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+        <view class="goods_img">
+            <image
+                src="{{item.goods_small_logo||'http://img0.imgtn.bdimg.com/it/u=4147984946,3134943596&fm=26&gp=0.jpg'}}"
+                mode="widthFix" />
+        </view>
+        <view class="goods_info">
+            <view class="item_title">{{item.goods_name}}</view>
+            <view class="item_price">￥{{item.goods_price}}</view>
+        </view>
+    </navigator>
+    <view class="list_no_more" wx:if="{{isNoMore}}">------没有数据了😭------</view>
+</view>
 <!-- 商品列表内容结束 -->

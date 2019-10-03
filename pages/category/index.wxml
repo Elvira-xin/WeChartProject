@@ -18,7 +18,7 @@
     <!-- 左边菜单部分结束 -->
 
     <!-- 右边内容部分开始 -->
-    <scroll-view  class="goods_list" scroll-y>
+    <scroll-view  class="goods_list" scroll-top="{{scrollTop}}" scroll-y>
       <view class="goods_group"
       wx:for="{{goodsData}}"
       wx:key="index1"
