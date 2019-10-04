@@ -1,5 +1,5 @@
 <view class="adress">
-    <button plain type="primary" open-type="openSetting">获取收货地址</button>
+    <button plain type="primary" bindtap="getAddress">获取收货地址</button>
 </view>
 <view class="cart">
     <view class="cart_title">购物车</view>

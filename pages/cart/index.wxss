@@ -25,6 +25,9 @@
     left: 0;
     bottom: 0;
     display: flex;
+    border: 1rpx solid #eee;
+    width: 100%;
+    height: 100rpx;
 }
 .check_all{
     flex: 2;
@@ -35,7 +38,19 @@
 .total_price_wrap{
     flex: 6;
     text-align: right;
+   justify-content: center;
+   margin: auto 5rpx;
+}
+.total_price_wrap text{
+    color: #fbb928;
+    font-weight: 700
 }
 .calculator{
+    display: flex;
     flex:4;
+    background-color: #fbb928;
+    color: #fff;
+    font-size: 32rpx;
+    justify-content: center;
+    align-items: center
 }
